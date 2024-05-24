@@ -10,33 +10,32 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // Replace with your build command
+                // For simplicity, we are just archiving the files
                 sh 'tar -czf simple-shopping-cart.tar.gz index.html styles.css script.js'
-                
             }
         }
         
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // Replace with your test command
-                
+                // Dummy test step
+                sh 'echo "No tests specified"'
             }
         }
         
         stage('Deploy') {
             steps {
                 echo 'Deploying to environment...'
-                // Add conditions or scripts to deploy to staging or production
-                
+                // Dummy deployment step
+                sh 'echo "Deploying build to server"'
             }
         }
         
         stage('Release') {
             steps {
                 echo 'Releasing the build...'
-                // Add steps to tag the release, push tags to repository, etc.
-                
+                // Dummy release step
+                sh 'echo "Tagging the release"'
             }
         }
     }
