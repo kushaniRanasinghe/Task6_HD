@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Define your environment variables here
         DEPLOY_ENV = 'production'
-        SONARQUBE_SCANNER_HOME = 'C:\\Users\ASUS\\sonarqube-10.5.1.90531\\sonarqube-10.5.1.90531\\bin' // Adjust this path as necessary
+        SONARQUBE_SCANNER_HOME = 'C:\\Users\\ASUS\\sonarqube-10.5.1.90531\\sonarqube-10.5.1.90531\\bin' // Adjust this path as necessary
         SONARQUBE_TOKEN = 'squ_84bf302632612e8db2938e3603da3f6b62c7f66b'
     }
 
