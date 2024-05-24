@@ -9,9 +9,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                  echo 'Building the project...'
-                  bat 'powershell Compress-Archive -Path index.html, styles.css, script.js -DestinationPath simple-shopping-cart.zip'
-                }
+                echo 'Building the project...'
+                // Using bat to execute Windows commands
+                bat 'del simple-shopping-cart.jar' // Deletes the old JAR file if it exists
+                bat 'jar cf simple-shopping-cart.jar index.html styles.css script.js'
+            }
         }
         
         stage('Test') {
