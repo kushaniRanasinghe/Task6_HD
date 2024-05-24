@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 // Dummy test step
-                sh 'echo "No tests specified"'
+                sh 'npm run test'
             }
         }
         
