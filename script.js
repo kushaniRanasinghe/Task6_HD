@@ -50,6 +50,19 @@ function removeFromCart(index) {
     displayCart();
 }
 
+// Checkout function
+function checkout() {
+    if (cart.length === 0) {
+        document.getElementById('message').textContent = 'Your cart is empty. Please add some products before checkout.';
+        document.getElementById('message').style.color = 'red';
+        return;
+    }
+    cart.length = 0; // Clear the cart
+    displayCart();
+    document.getElementById('message').textContent = 'Thank you for your purchase!';
+    document.getElementById('message').style.color = 'green';
+}
+
 // Initial product display
 window.onload = () => {
     displayProducts();
