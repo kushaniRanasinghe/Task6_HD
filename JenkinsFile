@@ -11,6 +11,7 @@ pipeline {
             steps {
                 echo 'Building the project...'
                 // Replace with your build command
+                sh 'tar -czf simple-shopping-cart.tar.gz index.html styles.css script.js'
                 
             }
         }
