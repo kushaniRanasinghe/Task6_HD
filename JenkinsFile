@@ -24,8 +24,7 @@ pipeline {
         stage('Code Quality Analysis') {
             steps {
                 withSonarQubeEnv('sq1') {
-                    //bat 'sonar-scanner -Dsonar.projectKey=YourProjectKey -Dsonar.sources=./src -Dsonar.host.url=http://localhost:9000 -Dsonar.login=squ_84bf302632612e8db2938e3603da3f6b62c7f66b'
-                    bat './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+                    bat 'sonar-scanner -Dsonar.projectKey=squ_84bf302632612e8db2938e3603da3f6b62c7f66b -Dsonar.sources=./src -Dsonar.host.url=http://localhost:9000 -Dsonar.login=squ_84bf302632612e8db2938e3603da3f6b62c7f66b'
                 }
             }
         }
