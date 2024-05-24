@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Building the project...'
                 // Replace with your build command
-                sh 'echo "Build command goes here"'
+                
             }
         }
         
@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 // Replace with your test command
-                sh 'echo "Test command goes here"'
+
             }
         }
         
@@ -31,11 +31,11 @@ pipeline {
                     if (env.BRANCH_NAME == 'main' || env.BRANCH_NAME == 'master') {
                         echo "Deploying to production..."
                         // Replace with your production deploy command
-                        sh 'echo "Deploy production command goes here"'
+                        
                     } else {
                         echo "Deploying to staging..."
                         // Replace with your staging deploy command
-                        sh 'echo "Deploy staging command goes here"'
+                        
                     }
                 }
             }
@@ -45,16 +45,10 @@ pipeline {
             steps {
                 echo 'Releasing the build...'
                 // Add steps to tag the release, push tags to repository, etc.
-                script {
-                    if (env.BRANCH_NAME == 'main' || env.BRANCH_NAME == 'master') {
-                        sh 'echo "Tagging release"'
-                        sh 'git tag -a "release-${BUILD_NUMBER}" -m "Release ${BUILD_NUMBER}"'
-                        sh 'git push --tags'
-                    }
-                }
+                
             }
         }
-    }
+    
     
     post {
         success {
