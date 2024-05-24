@@ -9,10 +9,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the project...'
-                // For simplicity, we are just archiving the files
-                sh 'tar -czf simple-shopping-cart.tar.gz index.html styles.css script.js'
-            }
+                  echo 'Building the project...'
+                  bat 'powershell Compress-Archive -Path index.html, styles.css, script.js -DestinationPath simple-shopping-cart.zip'
+                }
         }
         
         stage('Test') {
