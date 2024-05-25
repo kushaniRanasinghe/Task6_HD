@@ -7,6 +7,17 @@ pipeline {
     }
 
     stages {
+
+        stage('Clean Workspace') {
+            steps {
+                deleteDir()
+            }
+        }
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/kushaniRanasinghe/Task6_HD.git']]])
+            }
+        }
         stage('Build') {
             steps {
                   echo 'Building the project...'
