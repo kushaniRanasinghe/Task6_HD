@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  web:
+    image: node:14
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    command: >
+      sh -c "
+      npm install &&
+      npm start"
+    environment:
+      - NODE_ENV=development
+
+  # Example service for a database (e.g., MongoDB)
+  # db:
+  #   image: mongo
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - mongo-data:/data/db
+
+# volumes:
+#   mongo-data:
