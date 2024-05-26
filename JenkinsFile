@@ -45,9 +45,21 @@ pipeline {
         
         stage('Release') {
             steps {
-                echo 'Releasing the build...'
-                // Dummy release step
-                sh 'echo "Tagging the release"'
+                script {
+                    // Upload artifact to S3
+                    bat 'aws s3 cp simple-shopping-cart.zip s3://your-bucket-name/${BUILD_NUMBER}/simple-shopping-cart.zip'
+                    // Deploy using CodeDeploy
+                    awsCodeDeploy(
+                        applicationName: 'SimpleShoppingCartApp',
+                        deploymentGroupName: 'SimpleShoppingCartDeploymentGroup',
+                        deploymentConfig: 'CodeDeployDefault.OneAtATime',
+                        region: 'us-east-1',
+                        fileExistsBehavior: 'OVERWRITE',
+                        s3Bucket: 'your-bucket-name',
+                        s3Key: '${BUILD_NUMBER}/simple-shopping-cart.zip',
+                        s3BundleType: 'zip'
+                    )
+                }
             }
         }
     }
