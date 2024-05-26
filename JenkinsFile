@@ -34,11 +34,11 @@ pipeline {
                 echo 'Deploying to environment...'
                 script {
                     try {
-                        bat 'docker-compose down'  // Stop and remove existing containers
+                        bat 'docker-compose -f docker-compose.yml down'  // Stop and remove existing containers
                     } catch (Exception e) {
                         echo 'No containers to stop.'
                     }
-                    bat 'docker-compose up -d'  // Start new containers
+                    bat 'docker-compose -f docker-compose.yml up -d'  // Start new containers
                 }
             }
         }
