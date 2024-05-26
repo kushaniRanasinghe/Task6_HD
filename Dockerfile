@@ -4,11 +4,14 @@ FROM node:14
 # Set the working directory
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . .
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-# Install any needed packages
+# Install dependencies
 RUN npm install
+
+# Copy only necessary files
+COPY . .
 
 # Make port 8081 available to the world outside this container
 EXPOSE 8081
