@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                   echo 'Building the project...'
-                  bat 'powershell Compress-Archive -Path index.html, styles.css, script.js -DestinationPath simple-shopping-cart.zip'
+                  bat 'powershell Compress-Archive -Path index.html, ConnectWithUs.html, Feedback.html, Supermarket.html, WhoAreWe.html, styles.css, cakeFilter.js, script.js, OpeningHours.js, flowerFilter.js, formValidation.js, loginPage.html, slideshow.js, superMarketFilter.js -DestinationPath BloomMartCart.zip'
             }
         }
         
