@@ -1,20 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Shopping Cart</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="shop">
-        <h1>Simple Shopping Cart</h1>
-        <div class="products" id="productList"></div>
-        <h2>Your Cart</h2>
-        <div class="cart" id="cartList"></div>
-        <button id="checkoutButton" onclick="checkout()">Checkout</button>
-        <p id="message"></p>
-    </div>
-    <script src="script.js"></script>
-</body>
+    <head>
+        <!--Start of the Head Section-->
+        <meta name = "author" content = "Deakin Student" >
+        <meta name = "description" content = "Deakin Software System">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap CSS  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.0/css/font-awesome.min.css">
+
+        <title>Bloom...Cake...Mart</title>
+        <!--End of the Head Section-->
+    </head>
+
+    <body>
+        <!--Start of the Body Section-->
+        <header>
+            <!-- Header section with a Logo, Title, two buttons and a search bar -->
+            <div class="containerHeader">
+                <img src="4.png" alt="Logo" class="logo">
+                <h1>Bloom...Cake...Mart</h1>
+                <div class="login-register">
+                    <a href="loginPage.html" class="header-button">Login</a>
+                    <a href="register.html" class="header-button">Register</a>
+                </div>
+                <div class="search-bar-container">
+                    <form action="/products" method="GET">
+                        <input type="text" name="query" placeholder="Search..." class="search-bar">
+                        <button type="submit" class="search-button">Search</button>
+                    </form>
+                </div>
+            </div>
+        </header>
+        
+        <!--Navigation bar -->
+        <div class="navbar-container">
+            <div class="navbar">
+                <a href="whoAreWe.html">Who Are We</a>
+                <div class="dropdown">
+                    <button class="dropbtn">What We Offer
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Flowers.html">Flowers</a>
+                        <a href="Cakes.html">Cakes</a>
+                        <a href="Supermarket.html">Supermarket</a>
+                    </div>
+                </div>
+                <a href="ConnectWithUs.html">Connect With Us</a>
+                <a href="index.html#section5">News Letter</a>
+                <a href="Feedback.html">Feedback</a>
+            </div>
+        </div>
+
+        <!--Three images with a slideshow-->  
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                    <img src="1.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                    <img src="2.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                    <img src="3.jpg" style="width:100%">
+            </div>
+        </div>
+        <br>
+        <div class="dot-container"style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </div>
+
+        <!--Add products for each category-->
+        <div class="row">
+            <div class="column left">
+                <div class="col">
+                    <a href="#displayGreetingLink" class="header-button" id="displayGreetingLink"onclick="displayOpeningHoursMessage();">Opening Hours to visit our Physical Stores</a>
+                    <div id="openingHoursMessage"></div>
+                </div>
+                <a id="openingHoursMessage" onmouseover="changeBackgroundColor('yellow')" onmouseout="resetBackgroundColor()"></a>
+                <h3 style="background-color:lightcoral;">Flowers</h3>
+                <div class="image-row">
+                    <div class="card">
+                        <a href="Flowers.html"><img src="5.jpg" alt="Flower 1"></a>
+                        <div class="card-content">
+                            <h4>Forever Blossom</h4>
+                            <p class="price">$10.62</p>  
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="Flowers.html"><img src="7.jpg" alt="Flower 3"></a>
+                        <div class="card-content">
+                            <h4>Floral Blossom</h4>
+                            <p class="price">$10.01</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="Flowers.html"><img src="8.jpg" alt="Flower 4"></a>
+                        <div class="card-content">
+                            <h4>Amazing Blossom</h4>
+                            <p class="price">$16.54</p>  
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="Flowers.html"><img src="9.jpg" alt="Flower 5"></a>
+                        <div class="card-content">
+                            <h4>Happiest Blossom</h4>
+                            <p class="price">$6.73</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="Flowers.html"><img src="6.jpg" alt="Flower 6"></a>
+                        <div class="card-content">
+                            <h4>Paradise Blossom</h4>
+                            <p class="price">$10.01</p> 
+                        </div>
+                    </div>
+                </div>   
+                <h3 style="background-color:lightcoral;">Cakes</h3>
+                <div class="image-row">
+                    <div class="card">
+                        <a href="Cakes.html"><img src="11.jpg" alt="Cake 6"></a>
+                        <div class="card-content">
+                            <h4>Fruit Gateuax</h4>
+                            <p class="size">1kg</p>
+                            <p class="price">$21.99</p> 
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="Cakes.html"><img src="12.jpg" alt="Cake 7"></a>
+                        <div class="card-content">
+                            <h4>Chocolate Cake</h4>
+                            <p class="size">1kg</p> 
+                            <p class="price">$15.22</p> 
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="Cakes.html"><img src="13.jpg" alt="Cake 8"></a>
+                        <div class="card-content">
+                            <h4>Wings Of Cake</h4>
+                            <p class="size">1kg</p> 
+                            <p class="price">$23.34</p> 
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="Cakes.html"><img src="15.jpg" alt="Cake 10"></a>
+                        <div class="card-content">
+                            <h4>Cake For Dad</h4>
+                            <p class="size">1kg</p> 
+                            <p class="price">$19.45</p> 
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="Cakes.html"><img src="16.jpg" alt="Cake 11"></a>
+                        <div class="card-content">
+                            <h4>Pretty Women</h4>
+                            <p class="size">1.2kg</p> 
+                            <p class="price">$15.22</p>  
+                        </div>
+                    </div>
+                </div>  
+                <h3 style="background-color:lightcoral;">Supermarket Items</h3>
+                <div class="image-row">
+                    <div class="card">
+                        <a href="Supermarket.html"><img src="17.jpg" alt="iteam 12"></a>
+                        <div class="card-content">
+                            <h4>Papaya - Medium</h4>
+                            <p class="size">100g</p> 
+                            <p class="price">$0.59</p> 
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="Supermarket.html"><img src="18.jpg" alt="iteam 13"></a>
+                        <div class="card-content">
+                            <h4>Curry Powder</h4>
+                            <p class="size">250g</p> 
+                            <p class="price">$1.93</p> 
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="Supermarket.html"><img src="19.jpg" alt="iteam 14"></a>
+                        <div class="card-content">
+                            <h4>Asian Dhal </h4>
+                            <p class="size">1kg</p> 
+                            <p class="price">$1.27</p> 
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="Supermarket.html"><img src="21.jpg" alt="iteam 16"></a>
+                        <div class="card-content">
+                            <h4>Purple Cabbage</h4>
+                            <p class="size">250g</p> 
+                            <p class="price">$1.35</p> 
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="Supermarket.html"><img src="22.jpg" alt="iteam 17" width="100%"></a>
+                        <div class="card-content">
+                            <h4>Jack Mackeral</h4>
+                            <p class="size">425g</p> 
+                            <p class="price">$3.04</p>  
+                        </div>
+                    </div>
+                </div> 
+            </div>  
+            <div class="column right">
+                <section id="section5">
+                    <h3>News Letter</h3>
+                    <img src="news1.jpg" alt="news" class="news">
+                    <p>We are happy to provide an Exclusive offers for sampath Bank Customers...<br><br> <span class="blinking-text" style="font-weight: bold; font-style: italic;font-size: larger;color: crimson;">Hurry Up and Buy your product !!!</span><p>
+                    <img src="offer.png" alt="news" class="offer" width="100%">
+                    <p>Celebrate your special day with us...</p>
+                    <img src="birthday.png" alt="news" class="offer" width="100%">
+                    <h3>Dial Now</h3>
+                    <p style="font-size: larger;font-weight: bolder;  color: blue;">011 13331333</p>
+                    <h3>Where We Are</h3>
+                    <a href="map.html"><img src="map.png" alt="map image" width="300" height="150"></a>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <div class="containerFooter">
+                <div class="row">
+                    <div class="column">
+                        <div class="logo-container">
+                            <img src="4.png" alt="Logo" class="logo">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="address">
+                            <h4>Contact Us</h4>
+                            <div>
+                                <div>BloomCakeMart (Pvt) Ltd.</div>
+                                <div>Head Office: 501, Whitehorse Road,</div>
+                                <div>Blackburn, Australia</div><br>
+                                <div>Email: info@bloomcakemart.com</div>
+                                <div>Phone: 011 13331333</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="info">
+                            <h4>Info</h4>
+                            <ul>
+                                <li><a href="#">Terms and Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="newsletter">
+                            <h4>Newsletter</h4>
+                            <p>Enter your email address to be the first to receive special offers.</p>
+                            <div class="subscribe-container">
+                                <input type="email" placeholder="name@domain.com">
+                                <button class="subscribe-button">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!--Column for copyright and last updated-->
+                    <div class="column copyright-last-updated">
+                        <div class="copyright">
+                            <p style="color: blue;"><b>&copy; 2023 BloomCakeMart (Pvt) Ltd</b></p>
+                            <p style="padding-bottom: 0;">Last Modified: September 4, 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!--Bootstrap JavaScript-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="slideshow.js"></script>
+        <script src="OpeningHours.js"></script>
+ 
+    <!--End of the Body-->
+    </body>
 </html>
