@@ -49,7 +49,7 @@ pipeline {
                 echo 'Releasing the build...'
                 script {
                     withOctopusCredentials('octopus-api-key') {
-                        bat 'octo create-release --project="Bloom Mart Cart" --enableservices --version=1.0.%BUILD_NUMBER% --deployto=production --server=http://your-octopus-server --apikey=API-L7ZX7GBOT9FHZO9ETLSKVP1O7N0IKEU'
+                        bat 'octo create-release --project="Bloom Mart Cart" --enableservices --version=1.0.%BUILD_NUMBER% --deployto=Production --server=https://bloom-mart-cart.octopus.app --apikey=API-L7ZX7GBOT9FHZO9ETLSKVP1O7N0IKEU'
                     }
                 }
             }
