@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                   echo 'Building the project...'
-                  bat 'powershell Compress-Archive -Path index.html, styles.css, script.js -DestinationPath simple-shopping-cart.zip'
+                  bat 'powershell Compress-Archive -Path index.html, styles.css, script.js -DestinationPath BloomMartCart.zip'
             }
         }
         
@@ -47,8 +47,11 @@ pipeline {
         stage('Release') {
             steps {
                 echo 'Releasing the build...'
-                // Dummy release step
-                sh 'echo "Tagging the release"'
+                script {
+                    withOctopusCredentials('octopus-api-key') {
+                        bat 'octo create-release --project="Simple Shopping Cart" --enableservices --version=1.0.%BUILD_NUMBER% --deployto=production --server=http://your-octopus-server --apikey=API-YOUR_API_KEY'
+                    }
+                }
             }
         }
     }
