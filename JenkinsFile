@@ -1,3 +1,4 @@
+User
 pipeline {
     agent any
 
@@ -10,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                   echo 'Building the project...'
-                  bat 'powershell Compress-Archive -Path index.html, styles.css, script.js -DestinationPath BloomMartCart.zip'
+                  bat 'powershell Compress-Archive -Path index.html, styles.css, script.js -DestinationPath simple-shopping-cart.zip'
             }
         }
         
@@ -45,21 +46,9 @@ pipeline {
         
         stage('Release') {
             steps {
-                script {
-                    // Upload artifact to S3
-                    bat 'aws s3 cp simple-shopping-cart.zip s3://your-bucket-name/${BUILD_NUMBER}/simple-shopping-cart.zip'
-                    // Deploy using CodeDeploy
-                    awsCodeDeploy(
-                        applicationName: 'SimpleShoppingCartApp',
-                        deploymentGroupName: 'SimpleShoppingCartDeploymentGroup',
-                        deploymentConfig: 'CodeDeployDefault.OneAtATime',
-                        region: 'us-east-1',
-                        fileExistsBehavior: 'OVERWRITE',
-                        s3Bucket: 'your-bucket-name',
-                        s3Key: '${BUILD_NUMBER}/simple-shopping-cart.zip',
-                        s3BundleType: 'zip'
-                    )
-                }
+                echo 'Releasing the build...'
+                // Dummy release step
+                sh 'echo "Tagging the release"'
             }
         }
     }
