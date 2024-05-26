@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Start of the Head Section-->
+        <meta name = "author" content = "Deakin Student" >
+        <meta name = "description" content = "Deakin Software System">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap CSS  -->
+          <!-- Bootstrap CSS  -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.0/css/font-awesome.min.css">
+
+        <title>Bloom...Cake...Mart</title>
+        <!--End of the Head Section-->
+    </head>
+
+    <body>
+        <!--Start of the Body Section-->
+        <header>
+            <!-- Header section with a Logo, Title, two buttons and a search bar -->
+            <div class="containerHeader">
+                <img src="4.png" alt="Logo" class="logo">
+                <h1>Bloom...Cake...Mart</h1>
+                <div class="login-register">
+                    <a href="loginPage.html" class="header-button">Login</a>
+                    <a href="register.html" class="header-button">Register</a>
+                </div>
+                <div class="search-bar-container">
+                    <input type="text" placeholder="Search..." class="search-bar">
+                    <button class="search-button">Search</button>
+                </div>
+            </div>
+        </header>
+        
+        <!--Navigation bar with a dropdown option to select the products-->
+        <div class="navbar-container">
+            <div class="navbar">
+                <a href="index.html">Home</a>
+                <a href="whoAreWe.html">Who Are We</a>
+                <div class="dropdown">
+                    <button class="dropbtn">What We Offer
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Flowers.html">Flowers</a>
+                        <a href="Cakes.html">Cakes</a>
+                        <a href="Supermarket.html">Supermarket</a>
+                    </div>
+                </div>
+                <a href="ConnectWithUs.html">Connect With Us</a>
+                <a href="index.html#section5">News Letter</a>
+                <a href="Feedback.html">Feedback</a>
+            </div>
+        </div>
+
+        <!--Left column - provider a filter option-->
+        <div class="row" id="columns-row">
+            <div class="column small-left">
+                <button type="button" class="collapsible">Filter By Category</button>
+                <div class="content"><br><br>
+                    <input type="checkbox" class="form-check-input" name="Vegetables" value="Vegetables">
+                    <label class="form-check-label pe-4">Vegetables</label><br><br>
+                    <input type="checkbox" class="form-check-input" name="Fruits" value="Fruits">
+                    <label class="form-check-label pe-4">Fruits</label><br><br>
+                    <input type="checkbox" class="form-check-input" name="Grocery" value="Grocery">
+                    <label class="form-check-label pe-4">Grocery</label><br><br>
+                </div><br>
+                <button type="button" class="collapsible">Sort By Price</button>
+                <div class="content"><br><br>
+                    <input type="radio" class="form-check-input" name="price" value="High to Low" id="price">
+                    <label class="form-check-label">High to Low</label><br><br>
+                    <input type="radio" class="form-check-input" name="price" value="Low to High" id="price">
+                    <label class="form-check-label">Low to High</label>
+                </div>
+            </div>
+            <!--LeRightft column - Products-->
+            <div class="column large-right">
+                <div class="image-row new">
+                    <div class="card vegetable">
+                        <a href="Supermarket.html"><img src="48.jpg" alt="Item  1"></a>
+                        <div class="card-content">
+                            <h4>Ball Radish</h4>
+                            <p class="price">$2.62</p>  
+                            <button class="add-to-cart-button">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="card grocery">
+                        <a href="Supermarket.html"><img src="59.jpg" alt="Item 12"></a>
+                        <div class="card-content">
+                            <h4>Chickpeas</h4>
+                            <p class="price">$12.01</p>
+                            <button class="add-to-cart-button">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="card vegetable">
+                        <a href="Supermarket.html"><img src="50.jpg" alt="Item 3"></a>
+                        <div class="card-content">
+                            <h4>Onion</h4>
+                            <p class="price">$3.54</p> 
+                            <button class="add-to-cart-button">Add to Cart</button> 
+                        </div>
+                    </div>
+                    <div class="card vegetable">
+                        <a href="Supermarket.html"><img src="51.jpg" alt="Item 4"></a>
+                        <div class="card-content">
+                            <h4>Brinjal</h4>
+                            <p class="price">$5.73</p>
+                            <button class="add-to-cart-button">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="card fruit">
+                        <a href="Supermarket.html"><img src="53.jpg" alt="Item 6"></a>
+                        <div class="card-content">
+                            <h4>King Coconut</h4>
+                            <p class="price">$10.99</p>
+                            <button class="add-to-cart-button">Add to Cart</button>  
+                        </div>
+                    </div>
+                </div>  
+                <div class="image-row new">
+                    <div class="card vegetable">
+                        <a href="Supermarket.html"><img src="52.jpg" alt="Item 5"></a>
+                        <div class="card-content">
+                            <h4>Pumpkin</h4>
+                            <p class="price">$3.01</p>
+                            <button class="add-to-cart-button">Add to Cart</button> 
+                        </div>
+                    </div>
+                    <div class="card fruit">
+                        <a href="Supermarket.html"><img src="54.jpg" alt="Item 7"></a>
+                        <div class="card-content">
+                            <h4>Papaya</h4>
+                            <p class="price">$4.12</p>
+                            <button class="add-to-cart-button">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="card grocery">
+                        <a href="Supermarket.html"><img src="60.jpg" alt="Item 13"></a>
+                        <div class="card-content">
+                            <h4>Asian Dhal</h4>
+                            <p class="price">$6.54</p>
+                            <button class="add-to-cart-button">Add to Cart</button>  
+                        </div>
+                    </div>
+                    <div class="card vegetable">
+                        <a href="Supermarket.html"><img src="49.jpg" alt="Item 2"></a>
+                        <div class="card-content">
+                            <h4>Carrot</h4>
+                            <p class="price">$4.01</p>
+                            <button class="add-to-cart-button">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="card fruit">
+                        <a href="Supermarket.html"><img src="57.jpg" alt="Item 10"></a>
+                        <div class="card-content">
+                            <h4>Grapes</h4>
+                            <p class="price">$16.12</p>
+                            <button class="add-to-cart-button">Add to Cart</button> 
+                        </div>
+                    </div>
+                </div>  
+                <div class="image-row new">
+                    <div class="card grocery">
+                        <a href="Supermarket.html"><img src="58.jpg" alt="Item 11"></a>
+                        <div class="card-content">
+                            <h4>Egg</h4>
+                            <p class="price">$10.62</p>
+                            <button class="add-to-cart-button">Add to Cart</button>  
+                        </div>
+                    </div>
+                    <div class="card fruit">
+                        <a href="Supermarket.html"><img src="55.jpg" alt="Item 8"></a>
+                        <div class="card-content">
+                            <h4>Banana</h4>
+                            <p class="price">$3.22</p>
+                            <button class="add-to-cart-button">Add to Cart</button> 
+                        </div>
+                    </div>
+                    <div class="card grocery">
+                        <a href="Supermarket.html"><img src="61.jpg" alt="Item 14"></a>
+                        <div class="card-content">
+                            <h4>VCEYLON Rice</h4>
+                            <p class="price">$30.73</p>
+                            <button class="add-to-cart-button">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="card grocery">
+                        <a href="Supermarket.html"><img src="62.jpg" alt="Item 15"></a>
+                        <div class="card-content">
+                            <h4>KoKO Krunch</h4>
+                            <p class="price">$9.01</p>
+                            <button class="add-to-cart-button">Add to Cart</button> 
+                        </div>
+                    </div>
+                    <div class="card fruit">
+                        <a href="Supermarket.html"><img src="56.jpg" alt="Item 12"></a>
+                        <div class="card-content">
+                            <h4>Pasion Fruit</h4>
+                            <p class="price">$4.01</p>
+                            <button class="add-to-cart-button">Add to Cart</button> 
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <footer>
+            <div class="containerFooter">
+                <div class="row">
+                    <div class="column">
+                        <div class="logo-container">
+                            <img src="4.png" alt="Logo" class="logo">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="address">
+                            <h4>Contact Us</h4>
+                            <div>
+                                <div>BloomCakeMart (Pvt) Ltd.</div>
+                                <div>Head Office: 501, Whitehorse Road,</div>
+                                <div>Blackburn, Australia</div><br>
+                                <div>Email: info@bloomcakemart.com</div>
+                                <div>Phone: 011 13331333</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="info">
+                            <h4>Info</h4>
+                            <ul>
+                                <li><a href="#">Terms and Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="newsletter">
+                            <h4>Newsletter</h4>
+                            <p>Enter your email address to be the first to receive special offers.</p>
+                            <div class="subscribe-container">
+                                <input type="email" placeholder="name@domain.com">
+                                <button class="subscribe-button">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                     <!--Column for copyright and last updated-->
+                     <div class="column copyright-last-updated">
+                        <div class="copyright">
+                            <p style="color: blue;"><b>&copy; 2023 BloomCakeMart (Pvt) Ltd</b></p>
+                            <p style="padding-bottom: 0;">Last Modified: September 4, 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!--Bootstrap JavaScript-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="superMarketFilter.js"></script>
+
+    <!--End of the Body-->
+    </body>
+</html>
