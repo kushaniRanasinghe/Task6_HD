@@ -48,7 +48,7 @@ pipeline {
             steps {
                 echo 'Releasing the build...'
                 script {
-                    withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OCTOPUS_API_KEY')]) {
+                    withCredentials([string(credentialsId: 'octopus-api-key', variable: 'Octopus Deploy API Key')]) {
                         octopusCreateRelease additionalArgs: '',
                                              releaseVersion: "1.0.${env.BUILD_NUMBER}",
                                              project: 'Bloom Mart Cart',
