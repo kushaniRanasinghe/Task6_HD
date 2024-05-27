@@ -44,14 +44,14 @@ pipeline {
             }
         }
         
-        stage('Release') {
+       stage('Release') {
             steps {
                 echo 'Releasing the build...'
                 script {
                     withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OCTOPUS_API_KEY')]) {
-                        bat """
-                        C:\\Program Files\\OctopusCLI\\octo.exe create-release --project "Bloom Mart Cart" --releaseNumber "1.0.${env.BUILD_NUMBER}" --deployTo "Production" --server "https://bloom-mart-cart.octopus.app" --apiKey "${env.OCTOPUS_API_KEY}"
-                        """
+                        withEnv(["OCTO_CMD=\"C:\\Program Files\\OctopusCLI\\octo.exe\" create-release --project \"Bloom Mart Cart\" --releaseNumber \"1.0.${env.BUILD_NUMBER}\" --deployTo \"Production\" --server \"https://bloom-mart-cart.octopus.app\" --apiKey ${env.OCTOPUS_API_KEY}"]) {
+                            bat '%OCTO_CMD%'
+                        }
                     }
                 }
             }
