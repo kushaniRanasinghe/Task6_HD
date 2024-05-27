@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                   echo 'Building the project...'
-                  bat 'powershell Compress-Archive -Path index.html, styles.css, script.js -DestinationPath BloomMartCart.zip'
+                  bat 'powershell Compress-Archive -Path index.html, styles.css, script.js -DestinationPath BloomMartCart.1.0.0.zip'
             }
         }
         
