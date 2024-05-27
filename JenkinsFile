@@ -48,23 +48,14 @@ pipeline {
             steps {
                 echo 'Releasing the build...'
                 script {
-                    octopusCreateRelease additionalArgs: '', 
-                                         cancelOnTimeout: false, 
-                                         cliInstallation: 'Default', 
-                                         configFile: 'Default', 
-                                         defaultPackageVersion: '', 
-                                         deployTo: 'Production', 
-                                         deployToEnvironments: [], 
-                                         forcePackageDownload: false, 
-                                         jenkinsServerId: '', 
-                                         progress: false, 
-                                         project: 'Bloom Mart Cart', 
-                                         releaseVersion: '1.0.${env.BUILD_NUMBER}', 
-                                         showProgress: false, 
-                                         skip: false, 
-                                         space: '', 
-                                         timeout: 0, 
-                                         toolId: 'OctopusCLI'
+                    withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OCTOPUS_API_KEY')]) {
+                        octopusCreateRelease additionalArgs: '',
+                                             releaseVersion: "1.0.${env.BUILD_NUMBER}",
+                                             project: 'Bloom Mart Cart',
+                                             deployTo: 'Production',
+                                             apiKey: env.OCTOPUS_API_KEY,
+                                             serverUrl: 'https://bloom-mart-cart.octopus.app'
+                    }
                 }
             }
         }
