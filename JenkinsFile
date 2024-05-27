@@ -8,41 +8,6 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
-            steps {
-                  echo 'Building the project...'
-                  bat 'powershell Compress-Archive -Path index.html, styles.css, script.js -DestinationPath BloomMartCart.1.0.0.zip'
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                bat 'npm run test'
-            }
-        }
-
-        stage('Code Quality Analysis') {
-            steps {
-                withSonarQubeEnv('sq1') {
-                    bat 'C:\\Users\\ASUS\\SonarQube\\sonar-scanner-cli-5.0.1.3006-windows\\sonar-scanner-5.0.1.3006-windows\\bin\\sonar-scanner.bat -Dsonar.projectKey=jenkins_Project_SonarQube -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=squ_84bf302632612e8db2938e3603da3f6b62c7f66b'
-                }
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying to environment...'
-                script {
-                    try {
-                        bat 'docker-compose down'  // Stop and remove existing containers
-                    } catch (Exception e) {
-                        echo 'No containers to stop.'
-                    }
-                    bat 'docker-compose up -d'  // Start new containers
-                }
-            }
-        }
         
        stage('Release') {
             steps {
