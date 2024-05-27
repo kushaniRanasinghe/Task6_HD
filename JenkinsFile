@@ -49,12 +49,9 @@ pipeline {
                 echo 'Releasing the build...'
                 script {
                     withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OCTOPUS_API_KEY')]) {
-                        octopusCreateRelease additionalArgs: '',
-                                             releaseVersion: "1.0.${env.BUILD_NUMBER}",
-                                             project: 'Bloom Mart Cart',
-                                             deployTo: 'Production',
-                                             apiKey: env.OCTOPUS_API_KEY,
-                                             serverUrl: 'https://bloom-mart-cart.octopus.app'
+                        bat """
+                        C:\\Program Files\\OctopusCLI\\octo.exe create-release --project "Bloom Mart Cart" --releaseNumber "1.0.${env.BUILD_NUMBER}" --deployTo "Production" --server "https://bloom-mart-cart.octopus.app" --apiKey "${env.OCTOPUS_API_KEY}"
+                        """
                     }
                 }
             }
