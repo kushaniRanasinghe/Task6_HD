@@ -48,7 +48,23 @@ pipeline {
             steps {
                 echo 'Releasing the build...'
                 script {
-                    bat 'octo create-release --project="Bloom Mart Cart" --enableservices --version=1.0.%BUILD_NUMBER% --deployto=Production --server=https://bloom-mart-cart.octopus.app --apikey=API-L7ZX7GBOT9FHZO9ETLSKVP1O7N0IKEU'
+                    octopusCreateRelease additionalArgs: '', 
+                                         cancelOnTimeout: false, 
+                                         cliInstallation: 'Default', 
+                                         configFile: 'Default', 
+                                         defaultPackageVersion: '', 
+                                         deployTo: 'Production', 
+                                         deployToEnvironments: [], 
+                                         forcePackageDownload: false, 
+                                         jenkinsServerId: '', 
+                                         progress: false, 
+                                         project: 'Bloom Mart Cart', 
+                                         releaseVersion: '1.0.${env.BUILD_NUMBER}', 
+                                         showProgress: false, 
+                                         skip: false, 
+                                         space: '', 
+                                         timeout: 0, 
+                                         toolId: 'OctopusCLI'
                 }
             }
         }
